@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Tapşırıqları</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="task-box">
+        <h3>Tapşırıq 1</h3>
+        <input type="text" id="textInput" placeholder="Mətn daxil edin">
+        <button id="showBtn">Göstər</button>
+        <p id="resultText"></p>
+    </div>
+
+    <hr>
+
+    <div class="task-box">
+        <h3>Tapşırıq 2 (Kalkulyator)</h3>
+        <input type="number" id="num1" placeholder="Ədəd 1">
+        <input type="number" id="num2" placeholder="Ədəd 2">
+        <button id="plusBtn">+</button>
+        <button id="minusBtn">-</button>
+        <p id="calcResult">Nəticə: </p>
+    </div>
+
+    <hr>
+
+    <div class="task-box">
+        <h3>Tapşırıq 3 (Sayğaç)</h3>
+        <h2 id="counterDisplay">0</h2>
+        <button id="increaseBtn">Artır</button>
+        <button id="decreaseBtn">Azalt</button>
+    </div>
+
+    <hr>
+
+    <div class="task-box">
+        <h3>Tapşırıq 4 (Faktorial)</h3>
+        <p>Bu tapşırığın cavabı (8!) brauzerin Console bölməsində çıxacaq.</p>
+    </div>
+
+
+    <script>
+        // --- Tapşırıq 1 Məntiqi ---
+        const input = document.getElementById('textInput');
+        const button = document.getElementById('showBtn');
+        const pTag = document.getElementById('resultText');
+
+        button.addEventListener('click', function() {
+            pTag.textContent = input.value;
+        });
+
+
+        // --- Tapşırıq 2 Məntiqi ---
+        const num1 = document.getElementById('num1');
+        const num2 = document.getElementById('num2');
+        const plusBtn = document.getElementById('plusBtn');
+        const minusBtn = document.getElementById('minusBtn');
+        const calcResult = document.getElementById('calcResult');
+
+        plusBtn.addEventListener('click', function() {
+            calcResult.textContent = "Nəticə: " + (Number(num1.value) + Number(num2.value));
+        });
+        minusBtn.addEventListener('click', function() {
+            calcResult.textContent = "Nəticə: " + (Number(num1.value) - Number(num2.value));
+        });
+
+
+        // --- Tapşırıq 3 Məntiqi ---
+        const display = document.getElementById('counterDisplay');
+        const incBtn = document.getElementById('increaseBtn');
+        const decBtn = document.getElementById('decreaseBtn');
+        let count = 0;
+
+        incBtn.addEventListener('click', function() {
+            count++;
+            display.textContent = count;
+        });
+        decBtn.addEventListener('click', function() {
+            count--;
+            display.textContent = count;
+        });
+
+
+        // --- Tapşırıq 4 Məntiqi ---
+        let number = 8;
+        let factorial = 1;
+        for (let i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+        console.log("8! tam nəticəsi (Tapşırıq 4):", factorial);
+    </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>Sənəd</title>
+
+    <style>
+        #textInput {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #showBtn {
+            padding: 8px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #showBtn:hover {
+            background-color: #218838;
+        }
+        #resultText {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    </body>
+</html>
